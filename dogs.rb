@@ -43,23 +43,14 @@ def reverse_case_dog_names(dogs)
   dogs.each {|dog| new_arr.push(dog.swapcase) }
   new_arr
 end
-
+# single line of code no each
 def sum_of_all_dog_name_lengths(dogs)
-  sum = 0
-  dogs.each {|dog| sum += dog.length}
-  sum
+  dogs.join.length
 end
 
+# no each
 def dogs_with_long_names(dogs)
-  new_arr = []
-  dogs.each do |dog|
-    if dog.length > 4
-      new_arr.push true
-    else
-      new_arr.push false
-    end
-  end
-  new_arr
+  dogs.collect {|dog| dog.length > 4}
 end
 
 puts "*"*80
